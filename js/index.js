@@ -8,6 +8,7 @@ function showNotice() {
     notice.style.flexDirection = 'column'
     notice.style.justifyContent = 'center'
     notice.style.border = '2px solid black'
+    notice.style.width = '30%'
     notice.style.padding = '50px'
     notice.style.background = 'silver'
     notice.style.position = 'fixed'
@@ -39,8 +40,9 @@ const allImgs = Array.from(
     );
 allImgs.forEach(
     function(el) {
-        el.addEventListener('click', () => el.style.transform = 'scale(2, 0.5)');
-        el.addEventListener('dblclick', () => el.style.transform =  'scale(1, 0.5)');
+        el.addEventListener('click', () => el.style.transform = 'scale(2)');
+        el.addEventListener('dblclick', () => el.style.transform =  'scale(1)');
+        el.style.transition = '0.3s ease-in'
     }
 )
 
@@ -48,11 +50,15 @@ allImgs.forEach(
 //H2 using mouseover and mouse leave to change color to 🟢
 const allHeadline2 = Array.from(document.getElementsByTagName('h2'));
 
-console.log('all h2 elements', allHeadline2)
-
 allHeadline2.forEach(
     function(el) { 
         el.addEventListener('mouseover', () => el.style.color = 'lime');
         el.addEventListener('mouseleave', () => el.style.color = 'black')
+        el.style.transition = '0.2s ease-in'
     }
 )
+
+///window resize detection
+window.addEventListener('resize', () => window.alert('❗ page resize detected ❗'));
+
+
