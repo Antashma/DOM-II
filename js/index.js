@@ -58,7 +58,13 @@ allHeadline2.forEach(
     }
 )
 
-///window resize detection
-window.addEventListener('resize', () => window.alert('❗ page resize detected ❗'));
+//pointer leaves the window sets off pop-up 
+// document.addEventListener('pointerleave', 
+//     () => window.alert('Before toy go! Get $25 off with the code: 25OFF')
+//     );
+
+document.addEventListener('wheel', 
+    ()=> console.log('you scolled!')
+)
 
 
