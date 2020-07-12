@@ -63,7 +63,7 @@ allHeadline2.forEach(
 //     () => window.alert('Before toy go! Get $25 off with the code: 25OFF')
 //     );
 
-document.addEventListener('wheel', 
+document.addEventListener('scroll', 
     ()=> console.log('you scolled!')
 )
 
