@@ -1,4 +1,4 @@
-// BODY load element
+// variable for pg body and creating notice
 const pageBody = document.querySelector('body') 
 
 function showNotice() {
@@ -30,11 +30,12 @@ function showNotice() {
     //add notice to page!
     pageBody.prepend(notice);
 }
-pageBody.addEventListener('load', showNotice())
+// event1 - domcontentloaded event
+document.addEventListener('DOMContentLoaded', showNotice)
 
 
 
-//All IMG using click and dblclick to scale 👆 & 👇
+// event 2 & 3 - All IMG using click and dblclick to scale 👆 & 👇
 const allImgs = Array.from(
     document.getElementsByTagName('img')
     );
@@ -47,7 +48,7 @@ allImgs.forEach(
 )
 
 
-//H2 using mouseover and mouse leave to change color to 🟢
+//event 4 & 5 - H2 using mouseover and mouse leave to change color
 const allHeadline2 = Array.from(document.getElementsByTagName('h2'));
 
 allHeadline2.forEach(
@@ -58,20 +59,23 @@ allHeadline2.forEach(
     }
 )
 
-//pointer leaves the window & calls pop-up 
+//event 6 -pointer leaves the window & calls pop-up 
 document.addEventListener('pointerleave', leaveAlert)
 function leaveAlert() { // will also remove event
     window.alert('Don\'t leave yet! Use 25OFF at checkout to get $25 off your first booking!')
     document.removeEventListener('pointerleave', leaveAlert)
 }
 
+//event 7 - scrolling removes the nav
+const header = document.querySelector('.main-navigation')
+document.addEventListener('scroll', () => header.style.display = 'none')
 
+//event 8 - 
+const contentPick = document.querySelector('.content-pick')
+document.addEventListener('keydown', () => window.alert('You pressed a key!'))
 
-//scrolling removes the nav
+// event 9 - header will display again upon resize
+window.addEventListener('resize', () => header.style.display = 'block')
 
-// document.addEventListener('scroll',
-//     function() {
-//         const
-//     }
-// )
-
+//event 10 - 
+allImgs.forEach(img => img.addEventListener('transitionend', () => window.alert(event.target.alt)))
