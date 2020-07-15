@@ -58,13 +58,20 @@ allHeadline2.forEach(
     }
 )
 
-//pointer leaves the window sets off pop-up 
-// document.addEventListener('pointerleave', 
-//     () => window.alert('Before toy go! Get $25 off with the code: 25OFF')
-//     );
+//pointer leaves the window & calls pop-up 
+document.addEventListener('pointerleave', leaveAlert)
+function leaveAlert() { // will also remove event
+    window.alert('Don\'t leave yet! Use 25OFF at checkout to get $25 off your first booking!')
+    document.removeEventListener('pointerleave', leaveAlert)
+}
 
-document.addEventListener('scroll', 
-    ()=> console.log('you scolled!')
-)
 
+
+//scrolling removes the nav
+
+// document.addEventListener('scroll',
+//     function() {
+//         const
+//     }
+// )
 
